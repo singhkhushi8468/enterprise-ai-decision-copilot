@@ -1,0 +1,73 @@
+<h1>Enterprise Decision Dashboard</h1>
+
+<div class="input-panel">
+
+<input id="revenue" placeholder="Annual Revenue">
+<input id="budget" placeholder="Marketing Budget">
+<input id="goal" placeholder="Business Goal">
+
+<button onclick="generateStrategy()">Analyze</button>
+<button onclick="clearDashboard()">Clear</button>
+
+</div>
+
+<!-- KPI CARDS -->
+
+<div class="kpi-container">
+
+<div class="kpi-card">
+<h4>Total Revenue</h4>
+<p id="revKPI">0</p>
+</div>
+
+<div class="kpi-card">
+<h4>Budget Used</h4>
+<p id="budgetKPI">0</p>
+</div>
+
+<div class="kpi-card">
+<h4>Risk Level</h4>
+<p id="riskKPI">-</p>
+</div>
+
+<div class="kpi-card">
+<h4>Predicted Profit</h4>
+<p id="profit">0</p>
+</div>
+
+<div class="kpi-card">
+<h4>AI Decision Score</h4>
+<p id="aiScore">0</p>
+</div>
+
+</div>
+
+<!-- AI RESULT -->
+
+<div class="result">
+
+<h3>AI Strategy</h3>
+<div id="strategy"></div>
+
+<h3>AI Recommendation</h3>
+<div id="aiAdvice"></div>
+
+<h3>AI Advisor</h3>
+<div id="advisor"></div>
+
+<h3>Risk Level</h3>
+<div id="risk"></div>
+
+</div>
+
+<!-- CHART -->
+
+<h3>Business Growth Prediction</h3>
+
+<canvas id="growthChart"></canvas>
+
+<!-- HISTORY -->
+
+<h3>Analysis History</h3>
+
+<ul id="history"></ul>
