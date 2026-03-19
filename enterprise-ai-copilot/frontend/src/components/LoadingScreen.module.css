@@ -1,0 +1,87 @@
+.screen {
+  height: 100vh; width: 100vw;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  position: fixed; inset: 0; z-index: 999;
+  animation: fadeUp .3s ease;
+}
+
+.center {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  position: relative;
+}
+
+.logo {
+  width: 64px; height: 64px; border-radius: 20px;
+  background: linear-gradient(135deg, #4f8ef7, #7c5cfc);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; position: relative; z-index: 2;
+  animation: pulse2 2s ease-in-out infinite;
+}
+.logo svg { width: 32px; height: 32px; }
+
+@keyframes pulse2 {
+  0%,100% { box-shadow: 0 0 0 0 rgba(79,142,247,.4); }
+  50%      { box-shadow: 0 0 0 16px rgba(79,142,247,0); }
+}
+
+.title {
+  font-family: var(--serif); font-size: 24px;
+  color: var(--text); margin-bottom: 6px;
+}
+.welcome {
+  font-size: 14px; color: var(--text3); margin-bottom: 48px;
+}
+.welcome span { color: var(--accent); }
+
+/* Animated rings */
+.rings {
+  position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 200px; pointer-events: none; z-index: 0;
+}
+.ring1, .ring2, .ring3 {
+  position: absolute; border-radius: 50%; border: 1px solid;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.ring1 { width: 120px; height: 120px; border-color: rgba(79,142,247,.2); animation: spin 3s linear infinite; }
+.ring2 { width: 160px; height: 160px; border-color: rgba(124,92,252,.12); animation: spin 5s linear infinite reverse; }
+.ring3 { width: 200px; height: 200px; border-color: rgba(79,142,247,.06); animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+/* Progress */
+.progressWrap {
+  width: 280px; margin-bottom: 14px; position: relative; z-index: 2;
+}
+.progressBar {
+  height: 3px; background: rgba(255,255,255,.08);
+  border-radius: 2px; overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f8ef7, #7c5cfc);
+  border-radius: 2px;
+  transition: width .4s ease;
+}
+.progressText {
+  text-align: right; font-size: 11px;
+  color: var(--accent); margin-top: 5px; font-weight: 500;
+}
+
+.stepText {
+  font-size: 12px; color: var(--text3);
+  margin-bottom: 24px; min-height: 18px;
+  position: relative; z-index: 2;
+  animation: fadeUp .3s ease;
+}
+
+.dots { display: flex; gap: 6px; position: relative; z-index: 2; }
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  transition: background .3s, transform .3s;
+}
+.dotActive {
+  background: var(--accent);
+  transform: scale(1.3);
+}

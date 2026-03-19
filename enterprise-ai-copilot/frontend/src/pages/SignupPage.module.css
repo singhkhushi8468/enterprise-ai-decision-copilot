@@ -1,0 +1,20 @@
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.select {
+  width: 100%;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 14px;
+  color: var(--text); font-size: 13px; outline: none;
+  font-family: var(--sans); cursor: pointer;
+  transition: border-color .15s;
+}
+.select:focus { border-color: rgba(79,142,247,.5); }
+
+.strength { display: flex; align-items: center; gap: 8px; }
+.strengthBars { display: flex; gap: 4px; flex: 1; }
+.bar { flex: 1; height: 3px; background: var(--border2); border-radius: 2px; transition: background .3s; }
+.bar1 { background: var(--red); }
+.bar2 { background: var(--amber); }
+.bar3 { background: #7c5cfc; }
+.bar4 { background: var(--green); }
+.strengthLabel { font-size: 11px; color: var(--text3); white-space: nowrap; }

@@ -1,0 +1,57 @@
+{
+  "folders": [
+    { "path": ".", "name": "Enterprise AI Copilot" }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "python.defaultInterpreterPath": "${workspaceFolder}/aiml/.venv/bin/python",
+    "python.formatting.provider": "black",
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/node_modules": true,
+      "**/.env": true
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx":   "zsh"
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Backend (Node.js)",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/backend/server.js",
+        "cwd": "${workspaceFolder}/backend",
+        "envFile": "${workspaceFolder}/backend/.env"
+      },
+      {
+        "name": "AI/ML Service (FastAPI)",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": ["main:app", "--reload", "--port", "8000"],
+        "cwd": "${workspaceFolder}/aiml",
+        "envFile": "${workspaceFolder}/aiml/.env"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Full Stack (Backend + AI/ML)",
+        "configurations": ["Backend (Node.js)", "AI/ML Service (FastAPI)"]
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "ms-python.python",
+      "ms-python.black-formatter",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-typescript-next",
+      "ms-toolsai.jupyter",
+      "bradlc.vscode-tailwindcss"
+    ]
+  }
+}

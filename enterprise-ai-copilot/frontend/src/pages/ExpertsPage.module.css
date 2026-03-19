@@ -1,0 +1,5 @@
+.page { overflow-y: auto; height: 100%; padding: 24px; }
+.sectionHdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.title { font-size: 16px; font-weight: 500; color: var(--text); font-family: var(--serif); }
+.sub   { font-size: 12px; color: var(--text3); }
+.grid  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
